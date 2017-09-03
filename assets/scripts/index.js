@@ -2,13 +2,31 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-
+const authEvents = require('./auth/event.js')
 $(() => {
   setAPIOrigin(location, config)
 })
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
+$(() => {
+  authEvents.addHandlers()
+})
+$(() => {
+  $('#sign-in').show()
+  $('#sign-up').hide()
+  $('#updateinfo').hide()
+  $('#changePassword').hide()
+})
+$('#login-btn').click(function () {
+  $('#sign-in').show()
+  $('#sign-up').hide()
+})
+$('#sign-up-btn').click(function () {
+  $('#sign-up').show()
+  $('#sign-in').hide()
+  $('#updateinfo').hide()
+})
+$('#update-info-btn').click(function () {
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#updateinfo').show()
+})
