@@ -30,3 +30,6 @@ $('#update-info-btn').click(function () {
   $('#sign-in').hide()
   $('#updateinfo').show()
 })
+$('#changePassword-btn').click(function () {
+  $('#changePassword').show()
+})

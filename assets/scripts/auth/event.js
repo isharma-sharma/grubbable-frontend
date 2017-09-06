@@ -40,12 +40,27 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onStatusPost = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.statusPost(data)
+    .then(ui.statusPostSuccess)
+    .then(ui.statusPostFaliure)
+}
+const onSeeStatus = function (event) {
+  event.preventDefault()
+  api.seeStatus()
+    .then(ui.seeStatusSuccess)
+    .then(ui.seestatusFaliure)
+}
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#updateinfo').on('submit', onUpdateInfo)
   $('#changePassword').on('submit', onChangePassword)
   $('#sign-out-btn').on('click', onSignOut)
+  $('#special').on('submit', onStatusPost)
+  $('#see-status').on('click',onSeeStatus)
 }
 
 module.exports = {

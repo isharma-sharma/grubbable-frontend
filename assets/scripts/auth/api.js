@@ -45,7 +45,7 @@ const changePassword = function (data) {
     },
     data
   })
-    .then(console.log)
+    .then(console.log(data))
 }
 const signOut = function () {
   return $.ajax({
@@ -57,11 +57,31 @@ const signOut = function () {
   })
     .then(console.log)
 }
-
+const statusPost = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/statuses',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    },
+    data
+  })
+}
+const seeStatus = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/statuses',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   updateInfo,
   changePassword,
-  signOut
+  signOut,
+  statusPost,
+  seeStatus
 }

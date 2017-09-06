@@ -1,3 +1,4 @@
+const store = require('../store')
 const signUpSuccess = (data) => {
   // resetForm($('#sign-up'))
   $('.form-control').val('')
@@ -9,7 +10,8 @@ const signUpSuccess = (data) => {
   $('#succmsg').show()
 }
 const signInSuccess = (data) => {
-  console.log(data)
+  console.log(store.userId)
+  $('#profile-name').text('UserId ' + '  ' + store.userId + '  ' + ' ')
 }
 const updateInfoSuccess = (data) => {
   console.log(data)
@@ -17,9 +19,22 @@ const updateInfoSuccess = (data) => {
 const changePasswordSuccess = (data) => {
   console.log(data)
 }
+const signOutSuccess = (data) => {
+  console.log(data)
+  $('#sign-in').hide()
+}
+const statusPostSuccess = (data) => {
+  console.log(data)
+}
+const statusPostFaliure = (error) => {
+  console.log(error)
+}
 module.exports = {
   signUpSuccess,
   signInSuccess,
   updateInfoSuccess,
-  changePasswordSuccess
+  changePasswordSuccess,
+  signOutSuccess,
+  statusPostSuccess,
+  statusPostFaliure
 }
