@@ -40,6 +40,12 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onGetAllUser = function (event) {
+  event.preventDefault()
+  api.seeAllUser()
+    .then(ui.GetAllUserSuccess)
+    .catch(ui.GetAllUserFaliure)
+}
 const onStatusPost = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -60,7 +66,8 @@ const addHandlers = () => {
   $('#changePassword').on('submit', onChangePassword)
   $('#sign-out-btn').on('click', onSignOut)
   $('#special').on('submit', onStatusPost)
-  $('#see-status').on('click',onSeeStatus)
+  $('#get-status').on('click', onSeeStatus)
+  $('#see-user').on('click', onGetAllUser)
 }
 
 module.exports = {

@@ -15,15 +15,13 @@ const signIn = function (data) {
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
     data
-  })
-    .then((response) => {
-      console.log('token is', response.user.token)
-      store.userToken = response.user.token
-      store.userId = response.user.id
-      return store
-      // store.user.id = response.user.id
-    })
-    .then(console.log(data))
+  }).then((response) => {
+    console.log('token is', response.user.token)
+    store.userToken = response.user.token
+    store.userId = response.user.id
+    return store
+    // store.user.id = response.user.id
+  }).then(console.log(data))
 }
 const updateInfo = function (data) {
   console.log(data)
@@ -44,8 +42,7 @@ const changePassword = function (data) {
       Authorization: 'Token token=' + store.userToken
     },
     data
-  })
-    .then(console.log(data))
+  }).then(console.log(data))
 }
 const signOut = function () {
   return $.ajax({
@@ -54,9 +51,19 @@ const signOut = function () {
     headers: {
       Authorization: 'Token token=' + store.userToken
     }
-  })
-    .then(console.log)
+  }).then(console.log)
 }
+const seeAllUser = function () {
+  console.log('seeAllUser here')
+  return $.ajax({
+    url: config.apiOrigin + '/users',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  }).then(console.log)
+}
+
 const statusPost = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/statuses',
@@ -67,7 +74,9 @@ const statusPost = function (data) {
     data
   })
 }
+
 const seeStatus = function () {
+  console.log('i am here')
   return $.ajax({
     url: config.apiOrigin + '/statuses',
     method: 'GET',
@@ -83,5 +92,6 @@ module.exports = {
   changePassword,
   signOut,
   statusPost,
-  seeStatus
+  seeStatus,
+  seeAllUser
 }

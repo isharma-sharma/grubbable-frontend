@@ -24,7 +24,7 @@
                   <li><a id="login-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> Login</a></li>
                   <li><a id="changePassword-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> change-password</a></li>
                   <li><a id="sign-out-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> Sign-out</a></li>
-                  <li><a id="update-info-btn" data-toggle="modal" data-target="#myModal">updateInfo</a></li>
+                  <li><a id="update-info-btn" data-toggle="modal" data-target="#myModal">Update-Profile</a></li>
                 </ul>
           </div>
         </div>
@@ -62,7 +62,7 @@
       </form>
       <!--sign-in form-->
       <form id="sign-in">
-      <h2>Login</h2>
+      <h2>LOGIN</h2>
       <div class="form-group">
         <label for="email">EMAIL</label>
         <input type="email" name="credentials[email]"  class="form-control" id="email">
@@ -79,7 +79,7 @@
       <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">UPDATE-INFORMATION </h4>
+          <h4 class="modal-title">UPDATE-PROFILE</h4>
 
       <form id="updateinfo">
       <div class="form-group">
@@ -105,7 +105,7 @@
       </div>
       <!-- </div> -->
       <form id="changePassword">
-      <h3>Change Password</h3>
+      <h3>CHANGE-PASSWORD</h3>
       <div class="form-group">
       <label for="pwd">OLD-PASSWORD</label>
       <input type="password" name="passwords[old]" class="form-control" >
@@ -124,10 +124,14 @@
           <div class= 'status  col-md-4'><input type ="text" name ='status[status]' class="form-control" placeholder ='Whats on your mind ?'></div>
        <div class="col-sm-2 stat-up "><button type="submit" class="btn btn-success btn-block" > post </button></div>
     </form>
-      <div >
-        <button id ="see-status" type="button"> status</button>
-      </div>
-      </div>
+      <div id="see-status">
 
+      </div>
+      <button id ="get-status" type="button"> status</button>
+      </div>
+<!--button to see all the users -->
+<div>
+  <button type=" button " class ="btn btn-default" id = "see-user">Get all user</button>
+</div>
     </body>
 </html>
