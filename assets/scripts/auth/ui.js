@@ -1,5 +1,5 @@
 const store = require('../store')
-const showStatusTemplate = require('../templates/status-display.handlebars')
+const showStatusTemplate = require('../templates/statusdisplay.handlebars')
 const signUpSuccess = (data) => {
   // resetForm($('#sign-up'))
   $('.form-control').val('')
@@ -33,10 +33,14 @@ const GetAllUserFaliure = (error) => {
 }
 const statusPostSuccess = (data) => {
   console.log(data)
-  const showStatusHtml = showStatusTemplate({statuses: data.statuses})
+
+  const showStatusHtml = showStatusTemplate({
+    status: data.status
+  })
   $('#see-status').html(showStatusHtml)
-  console.log($('#see-status').html(showStatusHtml))
+  console.log(showStatusHtml)
 }
+
 const statusPostFaliure = (error) => {
   console.log(error)
 }
