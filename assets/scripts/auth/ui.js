@@ -41,6 +41,10 @@ const statusPostSuccess = (data) => {
   console.log(showStatusHtml)
 }
 
+const seeStatusSuccess = (data) => {
+
+}
+
 const statusPostFaliure = (error) => {
   console.log(error)
 }
@@ -53,5 +57,6 @@ module.exports = {
   statusPostSuccess,
   statusPostFaliure,
   GetAllUserSuccess,
-  GetAllUserFaliure
+  GetAllUserFaliure,
+  seeStatusSuccess
 }

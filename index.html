@@ -125,13 +125,33 @@
        <div class="col-sm-2 stat-up "><button type="submit" class="btn btn-success btn-block" > post </button></div>
     </form>
       <div id="see-status">
-<p> helodjhwrewoirtuoeitopiofpdisofuiewi </p>
-      </div>
+
       <button id ="get-status" type="button"> status</button>
       </div>
+    </div>
 <!--button to see all the users -->
-<div>
+<div id ="display-user" class="table-responsive display-user">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>ABOUT</th>
+      <th>FOLLOW</th>
+      </tr>
+    </thead>
+    <tbody id="addUser" class="addUser">
+    </tbody>
+  </table>
+
+
+
   <button type=" button " class ="btn btn-default" id = "see-user">Get all user</button>
+</div>
+<div class= "col-sm-2">
+  <form id ="search-user">
+<input type="text" name="credentials[name]" placeholder="find your friend">
+<button type= "submit" class="btn btn-primary btn-block col-sm-2 ">find friend</button>
+</form>
 </div>
     </body>
 </html>

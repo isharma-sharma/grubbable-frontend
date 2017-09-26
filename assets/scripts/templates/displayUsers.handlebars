@@ -1,0 +1,7 @@
+{{#each users as |user|}}
+<tr data-id="{{user.id}}">
+  <td name="[credentials][name]">{{user.name}}</td>
+  <td><button id="aboutUser{{user.id}}" class="btn btn-default aboutUser">ABOUT</button></td>
+  <td><button id="followUser{{user.id}}" class="btn btn-default followUser">FOLLOW</button></td>
+</tr>
+{{/each}}

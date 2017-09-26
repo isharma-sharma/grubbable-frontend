@@ -40,6 +40,14 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onGetSingleUser = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  //have to see wheather have to pass id or not or have to make handlebar for that
+  api.seeOneUser(data)
+    .then(ui.singleUserSuccess)
+    .then(ui.singleUserFaliue)
+}
 const onGetAllUser = function (event) {
   event.preventDefault()
   api.seeAllUser()
@@ -68,6 +76,7 @@ const addHandlers = () => {
   $('#special').on('submit', onStatusPost)
   $('#get-status').on('click', onSeeStatus)
   $('#see-user').on('click', onGetAllUser)
+  $('#search-user').on('submit', onGetSingleUser)
 }
 
 module.exports = {
