@@ -53,15 +53,18 @@ const signOut = function () {
     }
   }).then(console.log)
 }
+
 const seeOneUser = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/users/' + data.credentials.name,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.userToken
-    }
-  }).then(console.log)
+    },
+    data
+  }).then(console.log(data))
 }
+
 const seeAllUser = function () {
   console.log('seeAllUser here')
   return $.ajax({

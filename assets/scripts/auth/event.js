@@ -43,7 +43,6 @@ const onSignOut = function (event) {
 const onGetSingleUser = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  //have to see wheather have to pass id or not or have to make handlebar for that
   api.seeOneUser(data)
     .then(ui.singleUserSuccess)
     .then(ui.singleUserFaliue)

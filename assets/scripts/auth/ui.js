@@ -1,5 +1,6 @@
 const store = require('../store')
 const showStatusTemplate = require('../templates/statusdisplay.handlebars')
+const showSingleUserTemplate = require('../templates/displayUsers.handlebars')
 const signUpSuccess = (data) => {
   // resetForm($('#sign-up'))
   $('.form-control').val('')
@@ -25,6 +26,15 @@ const signOutSuccess = (data) => {
   console.log(data)
   $('#sign-in').hide()
 }
+const singleUserSuccess = (data) => {
+  console.log(data)
+  $('#display-user').show()
+  $('.head1').show()
+  const showSingleUserHtml = showSingleUserTemplate({ user: data.user })
+  $('#addUser').append(showSingleUserHtml)
+  debugger
+  console.log(showSingleUserHtml + 'checking handlebars')
+}
 const GetAllUserSuccess = (data) => {
   console.log(data)
 }
@@ -33,7 +43,6 @@ const GetAllUserFaliure = (error) => {
 }
 const statusPostSuccess = (data) => {
   console.log(data)
-
   const showStatusHtml = showStatusTemplate({
     status: data.status
   })
@@ -58,5 +67,6 @@ module.exports = {
   statusPostFaliure,
   GetAllUserSuccess,
   GetAllUserFaliure,
-  seeStatusSuccess
+  seeStatusSuccess,
+  singleUserSuccess
 }
