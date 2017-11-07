@@ -32,7 +32,6 @@ const singleUserSuccess = (data) => {
   $('.head1').show()
   const showSingleUserHtml = showSingleUserTemplate({ user: data.user })
   $('#addUser').append(showSingleUserHtml)
-  debugger
   console.log(showSingleUserHtml + 'checking handlebars')
 }
 const GetAllUserSuccess = (data) => {
@@ -57,6 +56,14 @@ const seeStatusSuccess = (data) => {
 const statusPostFaliure = (error) => {
   console.log(error)
 }
+
+const addFriendSuccess = (data) => {
+  console.log(data + 'this is friend-id')
+}
+
+const aboutFriendSuccess = function (data) {
+  console.log(data)
+}
 module.exports = {
   signUpSuccess,
   signInSuccess,
@@ -68,5 +75,7 @@ module.exports = {
   GetAllUserSuccess,
   GetAllUserFaliure,
   seeStatusSuccess,
-  singleUserSuccess
+  singleUserSuccess,
+  addFriendSuccess,
+  aboutFriendSuccess
 }

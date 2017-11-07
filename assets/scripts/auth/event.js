@@ -66,6 +66,22 @@ const onSeeStatus = function (event) {
     .then(ui.seeStatusSuccess)
     .then(ui.seestatusFaliure)
 }
+const onAddFriend = function (event) {
+  event.preventDefault()
+  const data = $(event.target).parent().parent().attr('data-id')
+  api.addFriend(data)
+    .then(ui.addFriendSuccess)
+    .then(ui.addFriendFaliure)
+}
+const onAboutfriend = function (event) {
+  event.preventDefault()
+  const id = $(event.target).parent().parent().attr('data-id')
+  console.log(id)
+  api.aboutFriend(id)
+    .then(ui.aboutFriendSuccess)
+    .then(ui.aboutFriendFaliure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -76,6 +92,8 @@ const addHandlers = () => {
   $('#get-status').on('click', onSeeStatus)
   $('#see-user').on('click', onGetAllUser)
   $('#search-user').on('submit', onGetSingleUser)
+  $('body').on('click', '.followUser', onAddFriend)
+  $('body').on('click', '.aboutUser', onAboutfriend)
 }
 
 module.exports = {

@@ -84,11 +84,10 @@ const statusPost = function (data) {
       Authorization: 'Token token=' + store.userToken
     },
     data
-  })
+  }).then(console.log(data))
 }
 
 const seeStatus = function () {
-  console.log('i am here')
   return $.ajax({
     url: config.apiOrigin + '/statuses',
     method: 'GET',
@@ -97,6 +96,33 @@ const seeStatus = function () {
     }
   })
 }
+const addFriend = function (data) {
+  console.log('i m here')
+  return $.ajax({
+    url: config.apiOrigin + '/friendships',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    },
+    data: {
+      'friendship': {
+        'friend_id': data
+      }
+    }
+  }).then(console.log(data))
+}
+
+const aboutFriend = function (id) {
+  console.log(id)
+  return $.ajax({
+    url: config.apiOrigin + '/users/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -106,5 +132,7 @@ module.exports = {
   statusPost,
   seeStatus,
   seeAllUser,
-  seeOneUser
+  seeOneUser,
+  addFriend,
+  aboutFriend
 }
