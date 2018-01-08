@@ -13,7 +13,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-
   const data = getFormFields(event.target)
   console.log(data)
   api.signIn(data)
@@ -45,7 +44,7 @@ const onGetSingleUser = function (event) {
   const data = getFormFields(event.target)
   api.seeOneUser(data)
     .then(ui.singleUserSuccess)
-    .then(ui.singleUserFaliue)
+    .catch(ui.singleUserFaliue)
 }
 const onGetAllUser = function (event) {
   event.preventDefault()
@@ -58,28 +57,30 @@ const onStatusPost = function (event) {
   const data = getFormFields(event.target)
   api.statusPost(data)
     .then(ui.statusPostSuccess)
-    .then(ui.statusPostFaliure)
+    .catch(ui.statusPostFaliure)
 }
 const onSeeStatus = function (event) {
   event.preventDefault()
   api.seeStatus()
     .then(ui.seeStatusSuccess)
-    .then(ui.seestatusFaliure)
+    .catch(ui.seestatusFaliure)
 }
+
 const onAddFriend = function (event) {
   event.preventDefault()
   const data = $(event.target).parent().parent().attr('data-id')
   api.addFriend(data)
     .then(ui.addFriendSuccess)
-    .then(ui.addFriendFaliure)
+    .catch(ui.addFriendFaliure)
 }
+
 const onAboutfriend = function (event) {
   event.preventDefault()
   const id = $(event.target).parent().parent().attr('data-id')
   console.log(id)
   api.aboutFriend(id)
     .then(ui.aboutFriendSuccess)
-    .then(ui.aboutFriendFaliure)
+    .catch(ui.aboutFriendFaliure)
 }
 
 const addHandlers = () => {
@@ -94,6 +95,7 @@ const addHandlers = () => {
   $('#search-user').on('submit', onGetSingleUser)
   $('body').on('click', '.followUser', onAddFriend)
   $('body').on('click', '.aboutUser', onAboutfriend)
+  // $('[data-toggle="popover"]').popover()
 }
 
 module.exports = {

@@ -1,6 +1,7 @@
 const store = require('../store')
 const showStatusTemplate = require('../templates/statusdisplay.handlebars')
 const showSingleUserTemplate = require('../templates/displayUsers.handlebars')
+const showAboutUserTemplate = require('../templates/aboutUser.handlebars')
 const signUpSuccess = (data) => {
   // resetForm($('#sign-up'))
   $('.form-control').val('')
@@ -58,11 +59,18 @@ const statusPostFaliure = (error) => {
 }
 
 const addFriendSuccess = (data) => {
-  console.log(data + 'this is friend-id')
+  // if friendship.friend_id === exists
+  //  print already friend .
+  $('#testing').text('you have add the friend')
 }
 
 const aboutFriendSuccess = function (data) {
   console.log(data)
+  const showAboutUserHtml = showAboutUserTemplate({
+    user: data.user
+  })
+  console.log(showAboutUserHtml)
+  $('#testing').html(showAboutUserHtml)
 }
 module.exports = {
   signUpSuccess,

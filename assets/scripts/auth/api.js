@@ -98,6 +98,7 @@ const seeStatus = function () {
 }
 const addFriend = function (data) {
   console.log('i m here')
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/friendships',
     method: 'POST',
