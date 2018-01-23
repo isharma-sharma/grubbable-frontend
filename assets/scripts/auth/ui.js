@@ -59,7 +59,7 @@ const statusPostFaliure = (error) => {
 }
 
 const addFriendSuccess = (data) => {
-  // if friendship.friend_id === exists
+  if (friendship.friend_id === exists){}
   //  print already friend .
   $('#testing').text('you have add the friend')
 }
