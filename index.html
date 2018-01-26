@@ -16,8 +16,148 @@
 
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-          <!-- <div class="navbar-header">-->
-<img src= "./assets/styles/images/under_construction.png">
+          <!-- <div class="navbar-header">
+          </div> -->
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right ">
+                  <li><a id="sign-up-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> Sign Up</a></li>
+                  <li><a id="login-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> Login</a></li>
+                  <li><a id="changePassword-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> change-password</a></li>
+                  <li><a id="sign-out-btn" href="#"><span class="glyphicon glyphicon-user shw"></span> Sign-out</a></li>
+                  <li><a id="update-info-btn" data-toggle="modal" data-target="#myModal">Update-Profile</a></li>
+                </ul>
+          </div>
         </div>
+      </nav>
+        <div class="container col-sm-4">
+
+      <!-- <div class="form"> -->
+      <form id="sign-up">
+      <h2>SIGN-UP</h2>
+      <div>
+        <label for="role">Name</label>
+      <input type="text" name="credentials[name]" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input type="email" name="credentials[email]" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">PASSWORD</label>
+        <input type="password" name="credentials[password]" class="form-control" id="pwd">
+      </div>
+      <div class="form-group">
+        <label for="pwd">CONFIRM PASSWORD</label>
+        <input type="password" name="credentials[password_confirmation]" class="form-control" id="pwd">
+      </div>
+      <div class="form-group">
+        <label for="age">AGE</label>
+        <input type="text" name="credentials[age]" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="address">ADDRESS</label>
+        <input type="text" name="credentials[address]" class="form-control" id ="address">
+      </div>
+      <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+      </form>
+      <!--sign-in form-->
+      <form id="sign-in">
+      <h2>LOGIN</h2>
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input type="email" name="credentials[email]"  class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">PASSWORD</label>
+        <input type="password" name="credentials[password]" class="form-control" id="pwd">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" class="sin">LOGIN</button>
+      <h3> New User signUp first</h3>
+      </form>
+      <!--changepassword form-->
+      <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">UPDATE-PROFILE</h4>
+
+      <form id="updateinfo">
+      <div class="form-group">
+        <label for="role">Name</label>
+      <input type="text" name="credentials[name]" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="age">AGE</label>
+        <input type="text" name="credentials[age]" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="address">ADDRESS</label>
+        <input type="text" name="credentials[address]" class="form-control" id ="address">
+      </div>
+      <button type="submit" class="btn btn-success btn-block">updateInfo</button>
+      </form>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default " data-dismiss="modal">CLOSE</button>
+        </div>
+      </div>
+      </div>
+      </div>
+      <!-- </div> -->
+      <form id="changePassword">
+      <h3>CHANGE-PASSWORD</h3>
+      <div class="form-group">
+      <label for="pwd">OLD-PASSWORD</label>
+      <input type="password" name="passwords[old]" class="form-control" >
+      </div>
+      <div class="form-group">
+      <label for="pwd">NEW-PASSWORD</label>
+      <input type="password" name="passwords[new]" class="form-control" >
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">ChangePassword</button>
+      </form>
+      </div>
+      <!--this div will append the follower info"-->
+      <div class= "container" >
+        <div id= 'profile-name'class= 'profile-name'> </div>
+        <form id="special">
+          <div class= 'status  col-md-4'><input type ="text" name ='status[status]' class="form-control" placeholder ='Whats on your mind ?'></div>
+       <div class="col-sm-2 stat-up "><button type="submit" class="btn btn-success btn-block" > post </button></div>
+    </form>
+      <div id="see-status">
+
+      <button id ="get-status" type="button"> status</button>
+      </div>
+    </div>
+<!--button to see all the users -->
+<div id ="display-user" class="table-responsive display-user" hidden="true">
+  <table class="table table-striped table-bordered">
+    <thead class="head1">
+      <tr>
+        <th>NAME</th>
+        <th>ABOUT</th>
+      <th>ADD-FRIEND</th>
+      </tr>
+    </thead>
+    <tbody id="addUser" class="addUser">
+    </tbody>
+  </table>
+
+
+
+  <button type=" button " class ="btn btn-default" id = "see-user">Get all user</button>
+</div>
+
+<div class= "col-sm-2">
+  <form id ="search-user">
+<input type="text" name="credentials[name]" placeholder="find your friend">
+<button type= "submit" class="btn btn-primary btn-block col-sm-2 ">find friend</button>
+</form>
+</div>
+<div id = "testing">
+  <!-- <h3>about user</h3>
+  <a href="#" data-toggle="popover" title="about me" data-content = "about me"> -->
+</div>
+
     </body>
 </html>
